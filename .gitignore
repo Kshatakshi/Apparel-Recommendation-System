@@ -2,6 +2,7 @@ Applied_AI_Workshop_Code_Data-20201125T201345Z-001/
 Applied_AI_Workshop_Code_Data-20201125T201345Z-001.zip
 server/*.npy
 server/16k_apparel_data_preprocessed
+server/word2vec_model
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
