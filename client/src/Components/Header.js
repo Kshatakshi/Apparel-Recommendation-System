@@ -9,7 +9,7 @@ function Header(){
         
   <img  className="hlogo" src={logo} width="50px" left="0" />
   
-            <h1>KlothIt</h1>
+            <h1 className="head">KlothIt</h1>
             <Link style= {linkstyle} to = "/" >Home</Link> | <Link style= {linkstyle}  to= "/about">About</Link>
         </header>
 

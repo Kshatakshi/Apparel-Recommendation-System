@@ -13,16 +13,7 @@ li{
   list-style-type: none;
 }
 
-/*nav{
 
-  display:flex;
-  justify-content: space-around;
-  min-height: 10vh;
-  align-items: center;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #fdcfdf;
-  color:whitesmoke;
-}*/
 .btn {
 
   display: inline-block;
@@ -402,6 +393,15 @@ margin: 10px;
 
 .custom-shape-divider-bottom-1606991430 .shape-fill {
   fill: #333333;
+}
+
+.head{
+  color:#be044d;
+}
+
+.fot{
+  z-index: 0;
+  color:black;
 }
 
 /*.l{

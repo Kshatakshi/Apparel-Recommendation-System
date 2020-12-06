@@ -14,30 +14,10 @@ import blog from './blog.svg';
 import about from './Components/About'
 import Svg2 from './Components/Svg2';
 import Flexx from './Components/Flexx';
-import Flex from './Components/Flex';
-/*import Flexbox from './Components/Flex' */
-/*<i  className="fas fa-image bug"></i> */
-/*<input className= "upload" style={linkstyle1} type="file" name= "file" placeholder="upload" onChange= {uploadImage}/>*/
+
+
 import './App.css';
-/*import classes from '*.module.css'
 
-const useStyles = makeStyles((theme)=>({
-  grid: {
-    width: '100%',
-    margin: '0px'
-  },
-  paper:{
-    padding: theme.spacing(2),
-    textAlign: 'Center',
-    color: theme.palette.text.secondary,
-    background:theme.palette.success.light,
-
-  }
-}
-
-
-));
-*/
 
 
 function App() {
@@ -57,6 +37,7 @@ function App() {
 
     const file = await res.json()
     setImage(file.secure_url)
+    console.log(file.original_filename)
     setLoading(false)
   }
   return (

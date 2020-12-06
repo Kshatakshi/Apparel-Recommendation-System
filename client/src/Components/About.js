@@ -1,6 +1,8 @@
 import React from 'react'
 
 function about() {
+
+    
     return (
         <React.Fragment>
             <h1 style={links}>About</h1>
