@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 import os 
-from gensim.models import KeyedVectors
+# from gensim.models import KeyedVectors
 from sklearn.metrics import pairwise_distances
 from sklearn.feature_extraction.text import CountVectorizer
 import pickle
