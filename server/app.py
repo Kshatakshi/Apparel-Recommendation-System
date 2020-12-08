@@ -1,6 +1,10 @@
 from flask import Flask, request
 from flask_restful import Api, Resource
 import os 
+from flask_cors import CORS, cross_origin
+
+
+
 
 from BagOfWords import bag_of_words_model
 from word2vec import weighted_w2v_model
@@ -8,11 +12,17 @@ from word2vec import weighted_w2v_model
 
 
 app = Flask(__name__)
+#CORS(app)
+cors = CORS(app, resources={r"/BOW": {"origins": "http://localhost:5000"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 api = Api(app)
+
 
 class BOW(Resource):
     def post(self):
         data = bag_of_words_model(request.form['title'],5)
+         
+      #  data = request.get_json(silent=True)
         print(data)
         # data = bag_of_words_model(request.json['title'],5)
         return {"data": data}

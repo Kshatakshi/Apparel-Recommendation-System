@@ -5,7 +5,11 @@ import web from './web.svg';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-//import axios from 'axios'
+
+import axios from 'axios'
+// const api= axios.create({
+//     baseURL: `http://localhost:3000/BOW`
+// })
 
 
 const useStyles = makeStyles((theme) => ({
@@ -86,76 +90,87 @@ export default function File() {
            console.log(`${method}`)
 
             console.log("submitted");
+      //       axios('http://localhost:5000/BOW').post()
+      //         // 'method':'POST',
+      //         // 'url':'http://localhost:5000/BOW',
+      //         // // 'headers': {
+      //         // //    // 'content-type':'application/octet-stream',
+      //         // //    // 'x-rapidapi-host':'example.com',
+      //         // //    // 'x-rapidapi-key': process.env.RAPIDAPI_KEY
+      //         // // },
+      //         // 'params': {
+      //         //     title:'tart womens collections ann wrap top xs black',
+      //         // },
+      //     })
+      // .then(res => {
+      //   console.log(res);
+      //   console.log(res.data);
+      // }).catch(e=>{
+      //   console.log(e)
+      // })
 
-           /* fetch('/BOW')
-      .then(response => {
-        console.log(response)
-        return response.json()
-      })
-      .then(json => {
-      console.log=(json) */
-     // this.setState({title1:'huafeiwude womens cardigan wool waistcoat casual vest black'})
-     // })
-        }
-        async function getData(){
+}
+        
+       /* async function postData(){
 
           try{
             const result= await fetch('/BOW',{
               method: 'POST',
-              mode: 'no-cors',
+           /*  mode: 'no-cors',
               headers:{
-               // 'Accept': 'application/json',
+               'Accept': 'application/json',
                 'Content-type': 'application/json'
       
               },
               
               
-              body: JSON.stringify('tart womens collections ann wrap top xs black')
-             //  title: 'tart womens collections ann wrap top xs black'
+              //body: JSON.stringify('tart womens collections ann wrap top xs black')
+             body:{ title: 'tart womens collections ann wrap top xs black'}*/
              
              
               
-            });
+           /* }); 
             console.log( result)}
           catch(e){
             console.log(e)
           }
-        }
-           /* fetch('http://127.0.0.1:5000/W2V')
-  .then(response => response.json())
-  .then(data => console.log(data)); */
+        } */
+           
+
   useEffect(() => {
-    /*fetch("/BOW",{
-      method: 'GET',
-      title: 'huafeiwude womens cardigan wool waistcoat casual vest black',
+
+     axios.post('http://localhost:5000/BOW', {
+
+    title : "tart womens collections ann wrap top xs black"
+    },{
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Access-Control-Allow-Origin' : '*',
+       // 'Access-Control-Request-Method':'POST',
+         'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        //'Access-Control-Allow-Origin': "*",
+        'Content-Type': 'application/json',
+
+    }
+    
+    
+}).then(data=> console.log(data)).catch(e=>console.log(e))
+    
+    
   
-      mode: 'cors',
-      cache: 'default',
-    }).then(response => response.json()
-    .then(data => console.log(data))).catch(e=>{
-      console.log(e);
-    });  */
 
-  
+   
 
-   /* const response = fetch('/BOW');
-    const data= response.json();
-    console.log(data);  */
+   // postData();
+   //getTeam();
 
 
-    getData();
-  
+
+    
 
   }, []) 
 
-  /*useEffect(async () => {
-    const result = await axios(
-      '/BOW',
-    );
- console.log(result.data);
-   // setData(result.data);
-  });*/
-
+  
   
 
 
@@ -166,7 +181,7 @@ export default function File() {
       const classes = useStyles();
         return (
 
-            <form className="searchf" onSubmit={handleSubmit} action="http://localhost:/BOW" method="get">
+            <form className="searchf" onSubmit={handleSubmit} action="" method="get">
                 
                     
                     {/* <img className="web1" src={web} /> */}
