@@ -12,26 +12,28 @@ from word2vec import weighted_w2v_model
 
 
 app = Flask(__name__)
-#CORS(app)
-cors = CORS(app, resources={r"/BOW": {"origins": "http://localhost:5000"}})
+CORS(app)
+#cors = CORS(app, resources={r"/BOW": {"origins": "http://localhost:5000"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 api = Api(app)
 
 
 class BOW(Resource):
     def post(self):
-        data = bag_of_words_model(request.form['title'],5)
+       # data = bag_of_words_model(request.json['title'],5)
          
       #  data = request.get_json(silent=True)
+       
+        data = bag_of_words_model(request.json['title'],6)
         print(data)
-        # data = bag_of_words_model(request.json['title'],5)
         return {"data": data}
 
 class W2V(Resource):
     def post(self):
-        data = weighted_w2v_model(request.form['title'],5)
+      #  data = weighted_w2v_model(request.form['title'],5)
+        
+        data = weighted_w2v_model(request.json['title'],6)
         print(data)
-        # data = weighted_w2v_model(request.json['title'],5)
         return {"data": data}
 
 '''class CNN(Resource):
