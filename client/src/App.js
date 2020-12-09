@@ -3,9 +3,6 @@ import Header from './Components/Header'
 import Footer from './Components/Footer' 
 import File from './Components/File'
 import {Grid} from '@material-ui/core'
-/*import { Paper } from '@material-ui/core';
-import {makeStyles} from "@material-ui/core/styles";
-import {Grid,Paper} from "@material-ui/core" */
 
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import pic1 from './pic1.svg';
@@ -82,13 +79,13 @@ function App() {
                 {
                   <img src={image} style= {linkstyle}/>
                 }
-                {/* </div> */}
+               
               </div>
           </div> 
-          {/* </div> */}
+          
 
           <Svg2/>
-          {/* <Flexx/> */}
+          
         {/* <div className="footer"> */}
           
           {/* </div> */}
@@ -101,7 +98,7 @@ function App() {
        </div>
        
       </Router>
-      <Footer/>
+      {/* <Footer/> */}
    </div>
 
   ); 

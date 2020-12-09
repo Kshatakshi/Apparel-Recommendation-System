@@ -20,19 +20,19 @@ api = Api(app)
 
 class BOW(Resource):
     def post(self):
-       # data = bag_of_words_model(request.json['title'],5)
+      # data = bag_of_words_model(request.json['title'],5)
          
       #  data = request.get_json(silent=True)
        
-        data = bag_of_words_model(request.json['title'],6)
+        data = bag_of_words_model(request.json['title'],9)
         print(data)
         return {"data": data}
 
 class W2V(Resource):
     def post(self):
-      #  data = weighted_w2v_model(request.form['title'],5)
+    #  data = weighted_w2v_model(request.form['title'],5)
         
-        data = weighted_w2v_model(request.json['title'],6)
+        data = weighted_w2v_model(request.json['title'],9)
         print(data)
         return {"data": data}
 
