@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -21,6 +23,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CenteredGrid() {
   const classes = useStyles();
+ //const [placeholder, setPlaceholder] = useState('Hi');
+
+
+   /* fetch('/BOW').then(res => res.json()).then(data => {
+      console.log(data.result);
+    });*/
+  /*  axios.get('/BOW', data)
+    .then((response) => {
+        // Handle request response here
+        console.log(data.result)
+    }; */
+   /* axios.post('http://127.0.0.1:5000/BOW')
+      .then(res => {
+        const persons = res.data;
+        console.log(persons)
+       // this.setState({ persons });
+      })*/
 
   return (
     <div className={classes.root}>
@@ -44,6 +63,11 @@ export default function CenteredGrid() {
           <Paper className={classes.paper}>xs=6</Paper>
         </Grid>
       </Grid>
+      
     </div>
+
+  
   );
 }
+
+

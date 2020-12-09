@@ -13,7 +13,7 @@ title_features = title_vectorizer.fit_transform(data["title"])
 
 title_index_map = {k.strip(): v for v, k in enumerate(data["title"])}
 # print( title_index_map['huafeiwude womens cardigan wool waistcoat casual vest black l'])
-
+print(title_index_map)
 
 def bag_of_words_model(title, num_results):
     doc_id = title_index_map[title]
