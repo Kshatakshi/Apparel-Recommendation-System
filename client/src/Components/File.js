@@ -19,6 +19,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Imageupload from './Imageupload'
+
 import axios from 'axios'
 
 
@@ -178,6 +180,7 @@ export default function File() {
 
 
       </form>
+      <Imageupload/>
 
        <div className={classes.root}>
        <Grid container spacing={4}>
@@ -222,4 +225,3 @@ export default function File() {
     </div>
   );
 }
-
