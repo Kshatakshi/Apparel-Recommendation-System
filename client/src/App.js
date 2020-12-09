@@ -50,7 +50,7 @@ function App() {
         <Route exact path= "/" render = { props=>(
         
           <React.Fragment>
-          <div className="search">
+          {/* <div className="search"> */}
               <div> <File /> </div> 
               
               
@@ -58,8 +58,8 @@ function App() {
                 {/* <div className="post">  */}
               
                 {/* <h1 style={upimg}> <img src={pic3} className="svg3" height="150px"/></h1> */}
-                </div>
-                
+                {/* </div>
+                 */}
               
 
           <Svg2/>

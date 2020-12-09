@@ -4,6 +4,11 @@ import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,6 +24,14 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.text.secondary,
       height: '20vh',
     },
+    root2: {
+      maxWidth: 345,
+      background: '#333333'
+    },
+    media: {
+      height: 0,
+      paddingTop: '56.25%', // 16:9
+    },
   }));
   
 
@@ -33,24 +46,27 @@ const Imageupload = () => {
     const [apparels, setapparel] = useState([]);
 
 
-   const  handleImg = (e) => {
-        if(e.target.files[0]) {
-            setImg({
-                src: URL.createObjectURL(e.target.files[0]),
-                
-                alt: e.target.files[0].name
-            });  
-            //console.log(e.target.files[0])
-           var x= e.target.files[0].name
-           var y= x.slice(0, -4)
-           // console.log(y)
-  
-            
-        }   
-       console.log(y)
-       const response = axios.post(`http://localhost:5000/CNN`, {
+    const  handleImg = (e) => {
+      if(e.target.files[0]) {
+          setImg({
+              src: URL.createObjectURL(e.target.files[0]),
+              
+              alt: e.target.files[0].name
+          });  
+          //console.log(e.target.files[0])
+         var x= e.target.files[0]
+         var data = new FormData();
+         data.append("file",x)
+         //var y= x.slice(0, -4)
+         console.log(x);
+         console.log(data)
 
-      title: `${y}`
+          
+      }   
+      const response = axios.post(`http://localhost:5000/CNN`, data,{
+
+        
+        headers:{ 'Content-Type': 'multipart/form-data'}
     }).then(data => { console.log(data.data); setapparel(data.data.data) }).catch(e => console.log(e))
 
 
@@ -77,42 +93,46 @@ const Imageupload = () => {
         </form>
 
 
-{apparels &&
-    apparels.map((data, index) => {
-
-      return (
         <div className={classes.root}>
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} lg={4}>
-              <Paper className={classes.paper}>
+       <Grid container spacing={4}>
+        {apparels &&
+        apparels.map((data, index) => {
 
-                <div className="book" key={index}>
-                  <h3>Apparel {index + 1}</h3>
-                
-                  <h2>{data.Title}</h2>
-                  <div>
-                
-
-                  <div >
-
-                    <p>{data.Brand}</p>
-
-                  </div>
-                  <img 
-  src={data.medium_image_url}
-  alt="new"
-  />
-  </div>
-                </div>
-              </Paper>
-
-            </Grid>
-          </Grid>
+          return (
+                <Grid item xs={12} sm={12} md={6}>
+                  
+                    <div className="book" key={index}>
+                    <Card className={classes.root1}>
+                    <CardHeader
+                      // action={
+                      //   <IconButton aria-label="settings">
+                      //     <MoreVertIcon />
+                      //   </IconButton>
+                      // }
+                      title={data.Title}
+                      subheader={data.Brand}
+                    />
+                    <CardMedia
+                      className={classes.media}
+                      image={data.medium_image_url}
+                      title={data.Title}
+                    />
+                    <CardContent>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                    Apparel {index + 1} description.
+                    </Typography>
+                    </CardContent>
+    
+                      </Card>
+                    </div>  
+                </Grid>
+             
+            
+          )
+          
+        })}
+         </Grid>
         </div>
-
-
-)
-})}
 
 
 </div>

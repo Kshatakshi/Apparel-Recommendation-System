@@ -130,7 +130,7 @@ export default function File() {
   return (
 
     <div className="main">
-
+     <div >
       <form className="searchf" onSubmit={handleSubmit} action="" method="Post">
 
 
@@ -181,7 +181,7 @@ export default function File() {
 
       </form>
       <Imageupload/>
-
+      </div>
        <div className={classes.root}>
        <Grid container spacing={4}>
         {apparels &&

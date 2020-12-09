@@ -1,4 +1,4 @@
-'''import numpy as np
+import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense
@@ -53,4 +53,4 @@ def get_similar_products_cnn(doc_id, num_results):
 
     return results
 
-# get_similar_products_cnn(125, 20) '''
+# get_similar_products_cnn(125, 20) 
