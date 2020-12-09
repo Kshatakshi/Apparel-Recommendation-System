@@ -88,7 +88,7 @@ function App() {
           {/* </div> */}
 
           <Svg2/>
-          <Flexx/>
+          
         {/* <div className="footer"> */}
           <Footer/>
           {/* </div> */}
