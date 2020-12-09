@@ -8,6 +8,7 @@ import { fade } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Imageupload from './Imageupload'
 
 import axios from 'axios'
 
@@ -161,6 +162,7 @@ export default function File() {
 
 
       </form>
+      <Imageupload/>
 
 
       {/* <Grid container spacing={4}>
@@ -211,27 +213,3 @@ export default function File() {
 
 
 
-{/* <div className="books">
-{books &&
-  books.map((book, index) => {
-    const cleanedDate = new Date(book.released).toDateString();
-    const authors = book.authors.join(', ');
-
-    return (
-      <div className="book" key={index}>
-        <h3>Book {index + 1}</h3>
-        <h2>{book.name}</h2>
-
-        <div className="details">
-          <p>👨: {authors}</p>
-          <p>📖: {book.numberOfPages} pages</p>
-          <p>🏘️: {book.country}</p>
-          <p>⏰: {cleanedDate}</p>
-        </div>
-      </div>
-    );
-  })}
-</div>
-</div>
-);
-} */}
