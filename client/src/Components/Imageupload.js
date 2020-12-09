@@ -37,13 +37,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const Imageupload = () => {
+const Imageupload = ({setter,apparels}) => {
     const [{alt, src}, setImg] = useState({
         src: placeholder,
         alt: 'Upload an Image'
     });
 
-    const [apparels, setapparel] = useState([]);
+    // const [apparels, setapparel] = useState([]);
 
 
     const  handleImg = (e) => {
@@ -67,7 +67,7 @@ const Imageupload = () => {
 
         
         headers:{ 'Content-Type': 'multipart/form-data'}
-    }).then(data => { console.log(data.data); setapparel(data.data.data) }).catch(e => console.log(e))
+    }).then(data => { console.log(data.data); setter(data.data.data) }).catch(e => console.log(e))
 
 
     
@@ -93,7 +93,7 @@ const Imageupload = () => {
         </form>
 
 
-        <div className={classes.root}>
+        {/* <div className={classes.root}>
        <Grid container spacing={4}>
         {apparels &&
         apparels.map((data, index) => {
@@ -132,7 +132,7 @@ const Imageupload = () => {
           
         })}
          </Grid>
-        </div>
+        </div> */}
 
 
 </div>

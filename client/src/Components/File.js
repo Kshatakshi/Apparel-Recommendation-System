@@ -180,7 +180,7 @@ export default function File() {
 
 
       </form>
-      <Imageupload/>
+      <Imageupload setter={setapparel} apparels={apparels}/>
       </div>
        <div className={classes.root}>
        <Grid container spacing={4}>
