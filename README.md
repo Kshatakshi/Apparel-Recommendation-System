@@ -22,6 +22,9 @@ additional words for a partial sentence.
 
 ## Snapshots
 ![image](https://user-images.githubusercontent.com/60396352/114160346-71bd7680-9944-11eb-8944-67c8c4d06303.png)
+
 ![image](https://user-images.githubusercontent.com/60396352/114160407-80a42900-9944-11eb-9798-2f69893b829f.png)
+
+### CNN based:
 ![image](https://user-images.githubusercontent.com/60396352/114160463-91ed3580-9944-11eb-953e-35613e0546a1.png)
 ![image](https://user-images.githubusercontent.com/60396352/114160474-93b6f900-9944-11eb-97fc-c0df64020f33.png)
